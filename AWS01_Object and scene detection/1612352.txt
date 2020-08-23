@@ -1,0 +1,5 @@
+Họ tên: Nguyễn Hà Hoàng Long
+MSSV: 1612352
+
+Link youtube demo chương trình nhận dạng các vật thể có trong hình và vẽ bounding box:
+https://youtu.be/F9z1dn6ku3g
