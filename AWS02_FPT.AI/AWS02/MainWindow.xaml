@@ -1,0 +1,94 @@
+﻿<Window x:Class="AWS02.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" ResizeMode="CanMinimize" Title="Demo FPT.AI" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Text to Speech" Width="150" Height="30">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="440"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Width="400" Height="100" Margin="20" 
+                             Name="InputText"
+                             HorizontalAlignment="Left" VerticalAlignment="Top" 
+                             AcceptsReturn="True" TextWrapping="Wrap">
+                    </TextBox>
+
+                    <StackPanel Margin="10" Grid.Column="1">
+                        <Label FontWeight="Bold" FontSize="18">Chọn giọng đọc</Label>
+                        <Label FontWeight="Bold">Miền Bắc</Label>
+                        <RadioButton Name="leminh" GroupName="voice" Margin="0,0,0,5" Checked="RadioButton_Checked">Lê Minh (Nam)</RadioButton>
+                        <RadioButton Name="male" GroupName="voice" Margin="0,0,0,5" Checked="RadioButton_Checked">Cao Chung (Nam)</RadioButton>
+                        <RadioButton Name="banmai" GroupName="voice" Margin="0,0,0,5" Checked="RadioButton_Checked" IsChecked="True">Ban Mai (Nữ)</RadioButton>
+                        <RadioButton Name="thuminh" GroupName="voice" Margin="0,0,0,5" Checked="RadioButton_Checked">Thu Minh (Nữ)</RadioButton>
+                        <RadioButton Name="female" GroupName="voice" Margin="0,0,0,5" Checked="RadioButton_Checked">Thu Dung (Nữ)</RadioButton>
+                        <Separator Width="15" Background="Transparent"/>
+                        
+                        <Label FontWeight="Bold">Miền Trung</Label>
+                        <RadioButton Name="giahuy" GroupName="voice" Margin="0,0,0,5" Checked="RadioButton_Checked">Gia Huy (Nam)</RadioButton>
+                        <RadioButton Name="myan" GroupName="voice" Margin="0,0,0,5" Checked="RadioButton_Checked">Mỹ An (Nữ)</RadioButton>
+                        <Separator Width="15" Background="Transparent"/>
+
+                        <Label FontWeight="Bold">Miền Nam</Label>
+                        <RadioButton Name="lannhi" GroupName="voice" Margin="0,0,0,5" Checked="RadioButton_Checked">Lan Nhi (Nữ)</RadioButton>
+                        <RadioButton Name="hatieumai" GroupName="voice" Margin="0,0,0,5" Checked="RadioButton_Checked">Hà Tiểu Mai (Nữ)</RadioButton>
+                        <Separator Width="15" Background="Transparent"/>
+                    </StackPanel>
+
+                    <Button Height="30" Width="120"
+                            Name="btnTextToSpeed"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="20,150"
+                            Click="btnTextToSpeech_Click">_Generate Audio
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Speech to Text" Width="150" Height="30">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="6*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="20,10">
+                        <TextBlock x:Name="durationTextBlock"
+                            Text="00:00:00"
+                            FontSize="20"
+                            FontFamily="Calibri"
+                            Foreground="Red"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"/>
+                        <Separator Width="15" Background="Transparent"/>
+                        
+                        <Button Height="30" Width="100"
+                            Name="btnRecord"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" 
+                            Click="btnRecord_Click">_Record
+                        </Button>
+                        <Separator Width="10" Background="Transparent"/>
+                        
+                        <Button Height="30" Width="100" 
+                            Name="btnStop"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" 
+                            Click="btnStop_Click">_Stop
+                        </Button>
+                        <Separator Width="10" Background="Transparent"/>
+                        
+                        <Button Height="30" Width="120" 
+                            Name="btnUploadAudioFile"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" 
+                            Click="btnUploadAudioFile_Click">_Upload Audio File
+                        </Button>
+                    </StackPanel>
+                    <TextBox Grid.Row="1" Width="400" Height="100" Margin="20,20"
+                             Name="OutputText"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top" 
+                             AcceptsReturn="True" TextWrapping="Wrap">
+                    </TextBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
